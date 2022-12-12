@@ -20,7 +20,7 @@
       <ion-row appCambiarColorBackground *ngFor="let medicion of listadoMediciones">
         <ion-col>{{medicion.dev_id}}</ion-col>
         <ion-col>{{medicion.temperatura}} °C</ion-col>
-        <ion-col>{{medicion.tiempo.value | date: 'dd/MM/yyyy hh:mm' }}</ion-col>
+        <ion-col>{{medicion.timestamp.value | date: 'dd/MM/yyyy hh:mm' }}</ion-col>
       </ion-row>
     </ng-container>
     <ion-row>
