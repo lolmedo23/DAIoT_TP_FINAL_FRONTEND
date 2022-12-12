@@ -1,0 +1,7 @@
+{
+  "name": "DAIoT_TP_FINAL_FRONTEND",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

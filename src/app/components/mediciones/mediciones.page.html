@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-button routerLink="/home">
+              <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+          </ion-button>
+      </ion-buttons>
+      <ion-title>Mediciones Dispositivo {{idDispositivo}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-margin">
+  <ion-grid class="ion-margin">
+    <ion-row>
+      <ion-col>Id Medicion</ion-col>
+      <ion-col>Valor</ion-col>
+      <ion-col>Fecha</ion-col>
+    </ion-row>
+    <ng-container *ngIf="listadoMediciones.length" >
+      <ion-row appCambiarColorBackground *ngFor="let medicion of listadoMediciones">
+        <ion-col>{{medicion.dev_id}}</ion-col>
+        <ion-col>{{medicion.temperatura}} °C</ion-col>
+        <ion-col>{{medicion.tiempo.value | date: 'dd/MM/yyyy hh:mm' }}</ion-col>
+      </ion-row>
+    </ng-container>
+    <ion-row>
+      <ion-col *ngIf="!listadoMediciones.length" > <ion-fab center middle>NO SE ENCUENTRAN MEDICIONES DISPONIBLES</ion-fab></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
